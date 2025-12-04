@@ -14,6 +14,11 @@ initDB().catch((err: any) => console.log(err));
 app.use('/users', userRoute);
 app.use('/auth', authRoute);
 
+app.get("/", async (req: Request, res: Response) => {
+    res.status(200).json({
+        message: "Hello world!"
+    });
+})
 app.use((req: Request, res: Response) => {
     res.status(404).json({
         message: "Path not found!",
