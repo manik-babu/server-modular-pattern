@@ -10,13 +10,13 @@ const initDB = async () => {
             CREATE TABLE IF NOT EXISTS users(
             id SERIAL PRIMARY KEY,
             name VARCHAR(100) NOT NULL,
-            userName VARCHAR(100) UNIQUE NOT NULL,
-            password VARCHAR(64) NOT NULL,
+            username VARCHAR(100) UNIQUE NOT NULL,
+            password TEXT NOT NULL,
             created_at TIMESTAMP DEFAULT NOW(),
             updated_at TIMESTAMP DEFAULT NOW()
             )
             `)
-        console.log("Table created!")
+        console.log("Connected with database")
     } catch (error) {
         console.error("DB error: ", error);
         throw new Error("Problem to create data table");

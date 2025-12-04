@@ -3,6 +3,7 @@ import { pool } from "../../config/db";
 import userService from "./user.service";
 
 const getUser = async (req: Request, res: Response) => {
+    // console.log(req.user);
     try {
         const users = await userService.getUser();
         res.status(200).json({
